@@ -33,9 +33,6 @@ app.get("/portfolio" , (req,res)=>{
     res.render("portfolio");
 });
 
-app.get("/pricing" ,(req,res)=>{
-    res.render("pricing");
-});
 
 app.get("/contact" , (req,res)=>{
     res.render("contact");
