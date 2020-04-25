@@ -47,14 +47,15 @@ app.post("/users" , (req, res)=>{
     var email = req.body.email;
     var subject = req.body.subject;
     var message = req.body.message;
-    const newUser = {name, email, subject, message};
+    var phoneNumber = req.body.phoneNumber;
+    const newUser = {name, email, subject, message, phoneNumber};
 
     User.create(newUser , (err , newUser)=>{
         if(err){
             console.log(err);
         }
         else{
-            sendEnquiryEmail(name , email, subject, message);
+            sendEnquiryEmail(name , email, subject, message , phoneNumber);
             res.redirect("/queryNoted");
         }
     });
